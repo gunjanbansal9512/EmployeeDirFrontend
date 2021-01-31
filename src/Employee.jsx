@@ -21,7 +21,8 @@ function Employee({ employee }) {
 		empemail: "",
 		employeeph: "",
 	});
-	const getUrl = "http://localhost/EmployeeDir/GetUpdateEmployee.php?empid=";
+	const getUrl =
+		"https://employeedirectorybackend.herokuapp.com/GetUpdateEmployee.php?empid=";
 
 	function getData(url) {
 		console.log(url);

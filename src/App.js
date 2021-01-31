@@ -9,7 +9,7 @@ function App() {
 	});
 
 	// const apiUrl = `http://127.0.0.1:5000/`;
-	const apiUrl = `http://localhost/EmployeeDir/EmployeeData.php`;
+	const apiUrl = `https://employeedirectorybackend.herokuapp.com/EmployeeData.php`;
 	useEffect(() => {
 		setAppState({ loading: true });
 

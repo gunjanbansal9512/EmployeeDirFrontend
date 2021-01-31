@@ -27,7 +27,8 @@ function Updatepopup(props) {
 	useEffect(() => {
 		setDetails(data);
 	}, [data]);
-	const url = "http://localhost/EmployeeDir/UpdateEmployee.php?data=";
+	const url =
+		"https://employeedirectorybackend.herokuapp.com/UpdateEmployee.php?data=";
 	const handleYes = () => {
 		const data = JSON.stringify(details);
 		if (checkDetails()) {

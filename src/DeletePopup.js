@@ -20,7 +20,8 @@ function DeletePopup(props) {
 		setOpenPopup(false);
 		console.log("no");
 	};
-	const url = "http://localhost/EmployeeDir/DeleteEmployee.php?empid=";
+	const url =
+		"https://employeedirectorybackend.herokuapp.com/DeleteEmployee.php?empid=";
 	// const url = "http://127.0.0.1:5000/delete?empid=";
 	function deleteEmployee(url) {
 		axios

@@ -142,7 +142,8 @@ function AddNewEmployee(props) {
 		return true;
 	}
 	// const url = "http://127.0.0.1:5000/addEmployee?data=";
-	const url = "http://localhost/EmployeeDir/CreateEmployee.php?data=";
+	const url =
+		"https://employeedirectorybackend.herokuapp.com/CreateEmployee.php?data=";
 	function addEmployee(url) {
 		axios
 			.post(url)
