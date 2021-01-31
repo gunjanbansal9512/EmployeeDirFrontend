@@ -1,25 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Employees from "./Employees";
+import { useState, useEffect } from "react";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	const [appState, setAppState] = useState({
+		loading: false,
+		repos: [],
+	});
+
+	// const apiUrl = `http://127.0.0.1:5000/`;
+	const apiUrl = `http://localhost/EmployeeDir/EmployeeData.php`;
+	useEffect(() => {
+		setAppState({ loading: true });
+
+		fetch(apiUrl)
+			.then((res) => res.json())
+			.then((repos) => {
+				setAppState({ loading: false, repos: repos });
+			});
+	}, [setAppState, apiUrl]);
+
+	if (appState.loading === true) {
+		return <p>Please wait</p>;
+	} else {
+		return (
+			<div>
+				<Employees data={appState.repos} />
+			</div>
+		);
+	}
 }
 
 export default App;
